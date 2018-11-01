@@ -1,0 +1,1409 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+/*  ------------------- header -------------------- */
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+header img#wit {
+    visibility: none;
+    display: none;
+}
+
+header img#logo {
+    width: 14em;
+    height: 4.5em;
+}
+
+header img#background {
+    width: 100%;
+    height: 18em;
+    margin-top: 4.5em;
+    background-image: url(img/boek.jpg);
+    background-size: 100% 100%;
+    z-index: -1;
+    position: absolute;
+}
+
+/* ---------- responsive --------- */
+
+@media(min-width: 550px) {
+    header img#logo {
+        margin-left: 0%;
+        margin-right: 0%;
+        z-index: 4;
+        max-height: 4em;
+        left: 0;
+        position: absolute;
+    }
+    header img#background {
+        width: 100%;
+        height: 21em;
+    }
+}
+
+@media(min-width: 650px) {
+    header img#background {
+        width: 100%;
+        height: 24em;
+    }
+}
+
+@media(min-width: 850px) {
+    header img#wit {
+        visibility: visible;
+        display: flex;
+        width: 7em;
+        height: 7em;
+        z-index: 1;
+        margin-top: 17em;
+        opacity: 0.6;
+    }
+    header img#background {
+        width: 100%;
+        height: 30em;
+    }
+}
+
+@media(min-width: 1050px) {
+    header img#wit {
+        visibility: visible;
+        display: flex;
+        width: 7em;
+        height: 7em;
+        z-index: 1;
+        margin-top: 24em;
+        opacity: 0.6;
+    }
+    header img#background {
+        width: 100%;
+        height: 42em;
+    }
+}
+
+/* -------------------- navigatie -------------------- */
+
+nav {
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background: white;
+    height: 4em;
+    box-shadow: -1px -2px 3px #E6E6E6;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    margin: 0;
+    margin-left: 5em;
+    margin-right: 1em;
+}
+
+nav ul li img {
+    max-width: 2em;
+    margin-top: -0.3em;
+    opacity: 0.3;
+}
+
+nav ul li a {
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 1.3em;
+    color: #00d66c;
+    float: left;
+    margin: 1em;
+}
+
+nav ul li img:hover {
+    opacity: 0.1;
+}
+
+nav ul li a:hover {
+    color: #1b1497;
+}
+
+/* ---------- responsive --------- */
+
+@media(min-width:500px) {
+    header nav ul {
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 1em;
+    }
+}
+
+@media(min-width: 550px) {
+    nav {
+        top: 0;
+        height: 4em;
+        z-index: 3;
+        position: absolute;
+        justify-content: flex-end;
+        right: 0;
+        margin-left: 0;
+        margin-right: -10em;
+    }
+    nav ul li a {
+        margin: 0.8em;
+        margin-top: 1em;
+    }
+}
+
+@media(min-width:650px) {
+    header nav ul {
+        margin-right: 2em;
+    }
+    nav ul li a {
+        margin: 1.5em;
+        margin-top: 1em;
+    }
+}
+
+/* -------------------- Bundels voor op reis -------------------- */
+
+fieldset {
+    max-width: 40em;
+    padding-left: 2em;
+    padding-right: 2em;
+    border: 0;
+    width: 100%;
+}
+
+form {
+    background-color: white;
+    border-radius: 0em 0em 1.7em 1.7em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 9em;
+    z-index: 2;
+    position: relative;
+    margin-bottom: 1em;
+}
+
+form input:invalid {
+    border-color: red;
+}
+
+form input:valid {
+    border-color: forestgreen;
+}
+
+form::after {
+    content: "";
+    width: 100%;
+    height: 1.8em;
+    position: absolute;
+    bottom: 0;
+    background-color: #00d66c;
+    z-index: 2;
+    border-radius: 0em 0em 1.25em 1.25em;
+}
+
+form input#verstuur {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 7em;
+    height: 2.2em;
+    border-radius: 1.25em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 100%;
+    color: white;
+    background-color: #ff3268;
+    z-index: 3;
+    line-height: 2.2em;
+    position: relative;
+    box-shadow: 2px 2px 0px #CD2A55;
+    border: none;
+}
+
+form input#verstuur:hover {
+    font-size: 105%;
+    transition: 0.4s;
+    opacity: 0.9
+}
+
+div#vlucht {
+    margin-left: 12%;
+    margin-right: 12%;
+    max-width: 130%;
+    position: relative;
+    z-index: 2;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    font-family: sans-serif;
+    color: white;
+    text-align: center;
+    font-size: 1.5em;
+    height: 2em;
+
+    max-width: 40em;
+    padding-left: 1.2em;
+    padding-right: 1.2em;
+    padding-top: 0.5em;
+    padding-bottom: 0.3em;
+    background-color: #00d66c;
+    margin-bottom: 0;
+    margin-top: 2em;
+    border-radius: 1.25em 1.25em 0em 0em;
+}
+
+label {
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 80%;
+    color: #00d66c;
+    margin-left: 2em;
+    margin-top: 1em;
+    padding: 0.5em;
+}
+
+label:after {
+    background-color: red;
+}
+
+input {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 70%;
+    height: 30%;
+    border-radius: 1.25em;
+    margin-left: 17%;
+    margin-right: 17%;
+    margin-top: 1em;
+    font-size: 80%;
+    text-align: center;
+    color: black;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+/* ---------- responsive --------- */
+
+@media(min-width: 550px) {
+    div#vlucht {
+        margin-top: 7em;
+        width: 18em;
+        height: auto;
+    }
+    form::after {
+        height: 2.2em;
+    }
+    h1 {
+        width: 12.7em;
+        height: 2.4em;
+    }
+    form {
+        height: 9.5em;
+        width: 19em;
+    }
+}
+
+@media(min-width: 650px) {
+    div#vlucht {
+        margin-top: 9em;
+        width: 20em;
+    }
+    h1 {
+        width: 12.7em;
+    }
+}
+
+@media(min-width: 800px) {
+    form a {
+        margin-top: 2em;
+    }
+}
+
+@media(min-width: 850px) {
+    div#vlucht {
+        margin-top: 10em;
+        width: 20em;
+        margin-left: 6%;
+    }
+    h1 {
+        width: 15.02em;
+    }
+    label {
+        font-size: 110%;
+    }
+    input {
+        width: 17em;
+        height: 3.3em;
+        margin-top: 1em;
+    }
+    input::placeholder {
+        font-size: 1.3em;
+    }
+    form input#verstuur {
+        margin-top: 1em;
+        margin-left: 8em;
+        margin-right: 8em;
+
+        width: 7em;
+        height: 2.5em;
+        font-size: 105%;
+    }
+    form {
+        height: 12em;
+        width: 22.5em;
+    }
+    fieldset {
+        margin-top: 1.5em;
+    }
+}
+
+@media(min-width: 1050px) {
+    div#vlucht {
+        margin-top: 17em;
+        width: 20em;
+    }
+}
+
+/* -------------------- Meest bekeken -------------------- */
+
+h2 {
+    max-width: 100%;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 150%;
+    color: #ff3268;
+    text-align: center;
+    margin-bottom: 0.5em;
+    margin-top: 2em;
+}
+
+div.gallerij {
+    display: flex;
+    overflow-y: scroll;
+}
+
+h3 {
+    font-family: sans-serif;
+    color: white;
+    font-size: 100%;
+    text-align: center;
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
+    z-index: 1;
+}
+
+article img {
+    width: 12em;
+    margin-left: 0.2em;
+    margin-right: 0.2em;
+    border-radius: 0.5em;
+    border-radius: 0em 0em 0.5em 0.5em;
+}
+
+section.bekeken article {
+    background-color: #ff3268;
+    border-radius: 0.5em;
+    margin: 0.3em;
+}
+
+article img:hover {
+    opacity: 0.6;
+}
+
+/* ---------- responsive --------- */
+
+@media(min-width: 550px) {
+    h3 {
+        font-size: 110%;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+    }
+    div.gallerij {
+        margin-left: 1.2em;
+        margin-right: 1.2em;
+    }
+    article img {
+        width: 10em;
+    }
+}
+
+@media(min-width: 650px) {
+    h2,
+    h3 {
+        font-size: 155%;
+    }
+    div.gallerij {
+        margin-left: 2em;
+        margin-right: 2em;
+    }
+    article img {
+        width: 12em;
+    }
+}
+
+@media(min-width: 800px) {
+    div.gallerij {
+        margin-left: 4em;
+        margin-right: 4em;
+    }
+}
+
+@media(min-width: 850px) {
+    h2 {
+        margin-top: 4.1em;
+        font-size: 160%;
+    }
+    h3 {
+        font-size: 125%;
+    }
+    article img {
+        width: 15em;
+    }
+}
+
+@media(min-width: 1050px) {
+    h2 {
+        margin-top: 6.2em;
+        font-size: 220%;
+    }
+    h3 {
+        font-size: 135%;
+    }
+    article img {
+        width: 19em;
+    }
+}
+
+section.categorie div button:hover {
+    background-color: #00D66C
+}
+
+/*-------------------- Categorien -------------------- */
+
+section.categorie button.knop {
+    max-width: 100%;
+    width: 100%;
+    height: 2em;
+    background-color: #F3E5D8;
+    margin-top: 1.5%;
+
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 2em;
+    color: #1b1497;
+    border: none;
+    margin-bottom: 1.8em;
+}
+
+h4 {
+    visibility: none;
+    display: none;
+}
+
+section.categorie button.knop:hover {
+    color: white;
+    background-color: #00d66c;
+}
+
+section.categorie ul {
+    visibility: hidden;
+    display: none;
+}
+
+section.categorie button {
+    display: hidden;
+}
+
+/* ---------- responsive --------- */
+
+@media(min-width: 550px) {
+    section.categorie button.knop {
+        visibility: none;
+        display: none;
+    }
+    h4 {
+        font-family: sans-serif;
+        color: #1b1497;
+        font-size: 2em;
+        text-align: center;
+        background-color: #F3E5D8;
+        display: block;
+        padding-bottom: 0.5em;
+        padding-top: 0.5em;
+        margin: 0;
+        margin-top: 0.5em;
+    }
+    section.categorie ul {
+        list-style: none;
+        max-width: 100%;
+        visibility: visible;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        padding-top: 1.5em;
+        margin: 0;
+
+    }
+    section.categorie ul li img {
+        width: 12em;
+        margin: 0.5em;
+        max-width: 100%;
+        visibility: visible;
+    }
+    section.categorie div {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 1em;
+    }
+    section.categorie div button {
+        width: 7em;
+        height: 2.2em;
+        border-radius: 1.25em;
+        font-family: sans-serif;
+        font-weight: bold;
+        font-size: 90%;
+        color: white;
+        background-color: #ff3268;
+        line-height: 2.2em;
+        box-shadow: 2px 2px 0px #CD2A55;
+        border: none;
+        margin-left: 1.2em;
+        margin-right: 1.2em;
+    }
+    section.categorie {
+        background-color: #F3E5D8
+    }
+}
+
+@media(min-width: 850px) {
+    section.categorie ul li img {
+        width: 17em;
+        margin: 1.5em;
+    }
+    h4 {
+        font-size: 250%;
+    }
+}
+
+/* -------------------- ingelogd pagina -------------------- */
+
+body#results h1 {
+    padding: 0;
+    border-radius: 0;
+    background-color: transparent;
+    color: #00d66c;
+    margin-top: 1em;
+    margin-bottom: -0.5em;
+}
+
+div.resultaten ul {
+    display: flex;
+    overflow-y: scroll;
+    width: 100vw;
+    margin-top: 0;
+}
+
+div.resultaten li img {
+    width: 9em;
+    height: 9em;
+    margin-left: 0.4em;
+    margin-right: 0.4em;
+}
+
+body#results nav ul li img {
+    opacity: 1;
+}
+
+body#results section.keuzes {
+    background: rgba(255, 255, 255, 0.6);
+    margin-top: 2.2em;
+    height: 14em;
+    width: 100%;
+}
+
+body#results div.resultaten {
+    margin-top: 0;
+    z-index: 3;
+    position: absolute;
+}
+
+div.resultaten ul {
+    list-style: none;
+    padding-left: 0.9em;
+}
+
+div a#aangeklikt {
+    background-color: #ff3268;
+    width: 7em;
+    height: 2.2em;
+    border-radius: 1.25em;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 90%;
+    color: white;
+    text-align: center;
+    line-height: 2.2em;
+    box-shadow: 2px 2px 0px #CD2A55;
+    border: none;
+    margin-left: 1.2em;
+    margin-right: 1.2em;
+}
+
+a#aangeklikt:hover {
+    background-color: #00d66c;
+    font-size: 100%;
+}
+
+div a#aanklikken {
+    background-color: #00d66c;
+    width: 7em;
+    height: 2.2em;
+    border-radius: 1.25em;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 90%;
+    color: white;
+    text-align: center;
+    line-height: 2.2em;
+    box-shadow: 2px 2px 0px #CD2A55;
+    border: none;
+    margin-left: 1.2em;
+    margin-right: 1.2em;
+}
+
+/* ---------- responsive --------- */
+
+@media(min-width: 550px) {
+    body#results h1 {
+        margin-left: 27%;
+        margin-right: 27%;
+        margin-bottom: -0.8em;
+    }
+    body#results section.keuzes {
+        height: 15em;
+        margin-top: 8em;
+    }
+}
+
+@media(min-width: 650px) {
+    body#results div.resultaten li img {
+        width: 11.5em;
+        height: 11.5em;
+        margin-left: 0.6em;
+        margin-right: 0.6em;
+    }
+    body#results h1 {
+        margin-left: 27%;
+        margin-right: 27%;
+        margin-bottom: -0.5em;
+        font-size: 1.6em;
+    }
+    body#results section.keuzes {
+        height: 18em;
+        margin-top: 8em;
+    }
+}
+
+@media(min-width: 850px) {
+    body#results div.resultaten li img {
+        width: 14em;
+        height: 14em;
+        margin-left: 0.6em;
+        margin-right: 0.6em;
+    }
+    body#results h1 {
+        margin-left: 28%;
+        margin-right: 28%;
+        margin-bottom: -0.5em;
+        font-size: 1.7em;
+    }
+    body#results section.keuzes {
+        height: 21em;
+        margin-top: 9em;
+    }
+}
+
+@media(min-width: 1050px) {
+    body#results div.resultaten li img {
+        width: 16em;
+        height: 16em;
+        margin-left: 0.7em;
+        margin-right: 0.7em;
+    }
+    body#results h1 {
+        margin-left: 33%;
+        margin-right: 33%;
+        margin-bottom: -1em;
+        font-size: 2.1em;
+    }
+    body#results section.keuzes {
+        height: 25em;
+        margin-top: 13em;
+    }
+}
+
+/* -------------------- download pagina --------------------*/
+
+body#downloaden li img {
+    opacity: 1;
+}
+
+body#downloaden h1 {
+    font-family: sans-serif;
+    background-color: #F3E5D8;
+    color: #1b1497;
+    margin-top: 0.5em;
+    font-size: 140%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+section.vullen {
+    background-color: #F3E5D8;
+    padding-bottom: 3em;
+    padding-top: 2em;
+    width: 100%;
+    height: auto;
+}
+
+section.vullen div#balk {
+    background-color: white;
+    width: 20em;
+    height: 2.3em;
+    margin: 1em;
+    background-color: white;
+    border-radius: 1.25em;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+section.vullen p {
+    font-family: sans-serif;
+    font-weight: bold;
+    color: #00d66c;
+    padding-top: 0.6em;
+    padding-left: 1em;
+    background-color: white;
+    border-radius: 1.25em;
+}
+
+section#bundel h2 {
+    font-family: sans-serif;
+    font-size: 1.8em;
+    color: #00d66c;
+    margin-top: 1em;
+    margin-bottom: -1em;
+}
+
+section#bundel a {
+    font-size: 10em;
+    margin: 0;
+    margin-top: -0.4em;
+    margin-bottom: -0.1em;
+    font-family: verdana, sans-serif;
+    color: #91A3B7;
+}
+
+section#bundel {
+    margin-left: 2em;
+}
+
+section#losse h2 {
+    color: #ff3268;
+    font-size: 1.8em;
+    font-family: sans-serif;
+    margin-top: 1em;
+    margin-bottom: -1em;
+}
+
+body#downloaden img#verborgen {
+    display: none;
+}
+
+section#losse a {
+    font-size: 10em;
+    font-family: verdana, sans-serif;
+    color: #91A3B7;
+    margin-bottom: 0.5em;
+}
+
+section#losse {
+    margin-left: 1em;
+    margin-bottom: 3.5em;
+}
+
+body#downloaden section a:hover {
+    opacity: 0.6;
+    transition: 0.3s;
+}
+
+/* ---------- responsive --------- */
+
+@media(min-width: 550px) {
+    body#downloaden h1 {
+        font-size: 145%
+    }
+    section.vullen {
+        width: 100%;
+        padding-bottom: 2em;
+        margin-top: 4em;
+    }
+    section.vullen div#balk {
+        width: 22em;
+        height: 2em;
+    }
+}
+
+@media(min-width: 650px) {
+    body#downloaden h1 {
+        font-size: 155%;
+        margin-top: 1em;
+    }
+    section.vullen {
+        width: 100%;
+        padding-bottom: 4em;
+        margin-top: 4em;
+    }
+    section.vullen div#balk {
+        width: 24em;
+        height: 2.4em;
+    }
+    section.vullen p {
+        width: 24em;
+        height: 2.4em;
+    }
+    section#bundel h2 {
+        font-size: 2em;
+    }
+    section#bundel a {
+        font-size: 11em;
+    }
+    section#losse h2 {
+        font-size: 2em;
+        margin-top: 1em;
+    }
+    section#bundel {
+        margin-left: 5em;
+    }
+    section#losse a {
+        font-size: 11em;
+    }
+    section#losse {
+        margin-left: 5em;
+    }
+}
+
+@media(min-width: 850px) {
+    body#downloaden h1 {
+        font-size: 170%;
+        margin-top: 2em;
+    }
+    section.vullen {
+        padding-bottom: 7em;
+        margin-top: 4em;
+    }
+    section.vullen div#balk {
+        width: 30em;
+        height: 2.8em;
+    }
+    section.vullen p {
+        width: 30em;
+        height: 2.8em;
+    }
+    section#bundel h2 {
+        font-size: 2.4em;
+    }
+    section#bundel a {
+        font-size: 12em;
+    }
+    section#bundel {
+        margin-left: 9em;
+    }
+    section#losse h2 {
+        font-size: 2.4em;
+    }
+    section#losse a {
+        font-size: 12em;
+    }
+    section#losse {
+        margin-left: 9em;
+    }
+}
+
+@media(min-width: 1050px) {
+    body#downloaden h1 {
+        font-size: 200%;
+        margin-top: 3em;
+    }
+    section.vullen {
+        padding-bottom: 10em;
+        margin-top: 4em;
+    }
+    section.vullen div#balk {
+        width: 35em;
+        height: 3em;
+    }
+    section.vullen p {
+        width: 35em;
+        height: 3em;
+        padding-top: 1em;
+    }
+    section#bundel h2 {
+        font-size: 3em;
+    }
+    section#bundel a {
+        font-size: 14em;
+    }
+    section#bundel {
+        margin-left: 12em;
+    }
+    section#losse h2 {
+        font-size: 3em;
+    }
+    body#downloaden section.vullen {
+        display: none;
+    }
+    body#downloaden section#bundel {
+        display: none;
+    }
+    body#downloaden section.vullen {
+        display: none;
+    }
+    body#downloaden img#verborgen {
+        display: flex;
+        width: 100%;
+        height: auto;
+        margin-top: 4.5em;
+    }
+    body#downloaden section#losse {
+        display: none;
+    }
+    section#losse a {
+        font-size: 14em;
+    }
+    section#losse {
+        margin-left: 12em;
+    }
+}
+
+/* -------------- bundels uitkiezen/samenstellen ------------ */
+
+body#samenstellen section {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #F3E5D8;
+    padding-bottom: 1.5em;
+}
+
+body#samenstellen section a {
+    width: 7em;
+    height: 2em;
+    text-align: center;
+    border-radius: 1.25em;
+    padding-top: 0.5em;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 100%;
+    color: white;
+    border: none;
+    background-color: #ff3268;
+    position: relative;
+    box-shadow: 2px 2px 0px #CD2A55;
+}
+
+body#samenstellen h1 {
+    font-family: sans-serif;
+    background-color: #F3E5D8;
+    color: #2800A0;
+    margin-top: 0.5em;
+    font-size: 150%;
+}
+
+body#samenstellen ul {
+    list-style: none;
+}
+
+body#samenstellen ul.album li img {
+    width: 11em;
+    height: 11em;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+body#samenstellen ul.album li p {
+    position: absolute;
+    z-index: 3;
+    font-size: 5.5em;
+    font-family: sans-serif;
+    font-weight: bold;
+    margin-top: 0.2em;
+    margin-left: 0.35em;
+    color: white;
+}
+
+body#samenstellen li {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    max-width: 100%;
+    float: left;
+}
+
+body#samenstellen ul.album {
+    margin-left: -1.5em;
+    margin-top: 1em;
+    margin-bottom: 53em;
+}
+
+body#samenstellen ul li img {
+    opacity: 1;
+}
+
+body#samenstellen span {
+    font-size: 0;
+    opacity: 1;
+    transition: 0.5s;
+}
+
+body#samenstellen input {
+    width: 13.2em;
+    height: 13.2em;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    border-radius: 0;
+}
+
+/* ---------- responsive --------- */
+
+@media(min-width: 550px) {
+    body#samenstellen section {
+        padding-top: 1em;
+        margin-top: 3.5em;
+    }
+    body#samenstellen ul {
+        padding-left: 3em;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media(min-width: 650px) {
+    body#samenstellen section {
+        padding-bottom: 1.5em;
+    }
+    body#samenstellen ul {
+        padding-left: 5em;
+    }
+}
+
+@media(min-width: 850px) {
+    body#samenstellen section {
+        padding-bottom: 2em;
+    }
+    body#samenstellen ul {
+        padding-left: 7em;
+    }
+}
+
+@media(min-width: 950px) {
+    body#samenstellen ul {
+        padding-left: 10em;
+    }
+}
+
+@media(min-width: 1050px) {
+    body#samenstellen section {
+        padding-bottom: 2.5em;
+    }
+}
+
+/* -------------------- download gelukt --------------------*/
+
+body#gelukt section.vullen {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+body#gelukt h1 {
+    font-family: sans-serif;
+    background-color: #F3E5D8;
+    color: #1b1497;
+    margin-bottom: 1em;
+    margin-top: 0.5em;
+    padding: 0;
+    font-size: 150%;
+    border-radius: 0;
+    padding-top: 0.5em;
+}
+
+div#container {
+    width: 20em;
+    height: 2.2em;
+    background-color: white;
+    border-radius: 1.25em;
+}
+
+div#inner {
+    width: 0%;
+    height: 2.2em;
+    border-radius: 1.25em;
+    background-color: #00d66c;
+    text-align: center;
+    line-height: 2em;
+    color: white;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+body#gelukt section.keuzes ul li img {
+    margin-top: 2.3em;
+}
+
+body#gelukt nav ul li img {
+    opacity: 1;
+}
+
+section.keuzes a {
+    font-size: 10em;
+    margin-top: -2em;
+    font-family: verdana, sans-serif;
+    color: #91A3B7;
+}
+
+section.keuzes a:hover {
+    opacity: 0.6;
+    transition: 0.3s;
+}
+
+body#gelukt h2 {
+    margin-top: 0.5em;
+    font-size: 2em;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+body#gelukt h3 {
+    margin-top: 0.5em;
+    font-size: 2em;
+    margin-left: -1em;
+    padding-left: -1em;
+    margin-right: auto;
+    width: 100%;
+    color: #ff3268;
+}
+
+/* ---------- responsive --------- */
+
+@media(min-width: 550px) {
+    body#gelukt h3 {
+        font-size: 2.1em;
+        margin-left: 0.1em;
+    }
+    body#gelukt h1 {
+        font-size: 155%;
+    }
+}
+
+@media(min-width: 650px) {
+    div#container {
+        width: 22em;
+        height: 2.3em;
+    }
+    div#container {
+        width: 24em;
+        height: 2.4em;
+    }
+    div#inner {
+        width: 22em;
+        height: 2.3em;
+        line-height: 2.5em;
+    }
+    div#inner {
+        width: 24em;
+        height: 2.4em;
+        line-height: 2.6em;
+    }
+    body#gelukt h1 {
+        font-size: 160%;
+        margin-top: 1em;
+    }
+    body#gelukt section.keuzes ul li img {
+        margin-top: 1em;
+        margin: 0.5em;
+        width: 12em;
+        height: 12em;
+    }
+    body#gelukt section.keuzes ul li img {
+        margin-top: 1.2em;
+        margin: 0.7em;
+        width: 14em;
+        height: 14em;
+    }
+    section.keuzes a {
+        margin: 0.1em;
+        font-size: 12em;
+    }
+    body#gelukt h3 {
+        font-size: 2.2em;
+        margin-left: -1.05em;
+    }
+    section#losse a {
+        margin-left: -0.2em;
+    }
+}
+
+@media(min-width: 850px) {
+    div#container {
+        width: 28em;
+        height: 2.6em;
+    }
+    div#inner {
+        width: 28em;
+        height: 2.6em;
+    }
+    body#gelukt h1 {
+        font-size: 190%;
+        margin-top: 1.5em;
+    }
+    section.keuzes a {
+        margin: 0.2em;
+        font-size: 14em;
+    }
+    body#gelukt h3 {
+        font-size: 2.2em;
+        margin-left: -1.9em;
+    }
+    section#losse a {
+        margin-left: -0.4em;
+    }
+}
+
+@media(min-width: 1050px) {
+    div#container {
+        width: 30em;
+        height: 2.8em;
+    }
+    div#inner {
+        width: 30em;
+        height: 2.8em;
+        line-height: 2.8em;
+    }
+    body#gelukt h1 {
+        font-size: 220%;
+        margin-top: 2em
+    }
+    body#gelukt section.keuzes ul li img {
+        margin-top: 1.3em;
+        margin: 1em;
+        width: 15.5em;
+        height: 15.5em;
+    }
+    section.keuzes a {
+        margin: 0.3em;
+        font-size: 15em
+    }
+    body#gelukt h3 {
+        font-size: 2.3em;
+        margin-left: -2.5em;
+    }
+}
+
+/* -------------------- verhaal --------------------*/
+
+body#verhaal img#verhaal {
+    width: 100%;
+    height: auto;
+    padding-bottom: 2.4em;
+    z-index: -2;
+    position: absolute;
+}
+
+body#verhaal img#leeg {
+    width: 100%;
+    height: auto;
+    padding-bottom: 2.4em;
+    z-index: -1;
+    transition: 5s;
+    position: absolute;
+}
+
+.opacity {
+    opacity: 0;
+}
+
+body#verhaal img#leeg1 {
+    display: none;
+}
+
+body#verhaal img#verhaal1 {
+    display: none;
+}
+
+/* ---------- responsive --------- */
+
+@media(min-width: 550px) {
+    body#verhaal img#leeg {
+        display: none;
+    }
+    body#verhaal img#verhaal {
+        display: none;
+    }
+    body#verhaal img#leeg1 {
+        display: flex;
+        width: 100%;
+        height: auto;
+        padding-bottom: 2.4em;
+        z-index: -1;
+        transition: 2s;
+        position: absolute;
+        margin-top: 4em;
+    }
+    body#verhaal img#verhaal1 {
+        display: flex;
+        width: 100%;
+        height: auto;
+        padding-bottom: 2.4em;
+        z-index: -2;
+        position: absolute;
+        margin-top: 4em;
+    }
+    .opacity1 {
+        opacity: 0;
+    }
+}
