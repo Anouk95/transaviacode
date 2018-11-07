@@ -9,6 +9,7 @@ body {
 /*  ------------------- header -------------------- */
 
 header {
+
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -21,18 +22,11 @@ header img#wit {
 
 header img#logo {
     width: 14em;
-    height: 4.5em;
+    height: auto;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
 }
 
-header img#background {
-    width: 100%;
-    height: 18em;
-    margin-top: 4.5em;
-    background-image: url(img/boek.jpg);
-    background-size: 100% 100%;
-    z-index: -1;
-    position: absolute;
-}
 
 /* ---------- responsive --------- */
 
@@ -45,18 +39,8 @@ header img#background {
         left: 0;
         position: absolute;
     }
-    header img#background {
-        width: 100%;
-        height: 21em;
-    }
 }
 
-@media(min-width: 650px) {
-    header img#background {
-        width: 100%;
-        height: 24em;
-    }
-}
 
 @media(min-width: 850px) {
     header img#wit {
@@ -67,10 +51,6 @@ header img#background {
         z-index: 1;
         margin-top: 17em;
         opacity: 0.6;
-    }
-    header img#background {
-        width: 100%;
-        height: 30em;
     }
 }
 
@@ -84,10 +64,6 @@ header img#background {
         margin-top: 24em;
         opacity: 0.6;
     }
-    header img#background {
-        width: 100%;
-        height: 42em;
-    }
 }
 
 /* -------------------- navigatie -------------------- */
@@ -100,6 +76,7 @@ nav {
     background: white;
     height: 4em;
     box-shadow: -1px -2px 3px #E6E6E6;
+    z-index: 11;
 }
 
 header nav ul {
@@ -173,12 +150,16 @@ nav ul li a:hover {
 
 /* -------------------- Bundels voor op reis -------------------- */
 
+header > section {
+    background-image: url(img/boekmobiel.png);
+    background-size: 100% 100%;
+    z-index: 0;
+    position: relative;
+}
+
 fieldset {
-    max-width: 40em;
-    padding-left: 2em;
-    padding-right: 2em;
+    width: 20em;
     border: 0;
-    width: 100%;
 }
 
 form {
@@ -187,10 +168,13 @@ form {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin: 0;
+    padding: 0;
     height: 9em;
     z-index: 2;
     position: relative;
-    margin-bottom: 1em;
+    background: rgba(255, 255, 255, 0.8);
+
 }
 
 form input:invalid {
@@ -213,15 +197,11 @@ form::after {
 }
 
 form input#verstuur {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
     width: 7em;
     height: 2.2em;
     border-radius: 1.25em;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 1em;
 
     font-family: sans-serif;
     font-weight: bold;
@@ -242,16 +222,16 @@ form input#verstuur:hover {
 }
 
 div#vlucht {
-    margin-left: 12%;
-    margin-right: 12%;
-    max-width: 130%;
+    width: 20em;
     position: relative;
     z-index: 2;
+    margin-left: auto;
+    margin-right: auto;
+
 }
 
 h1 {
-    display: flex;
-    justify-content: center;
+
     font-family: sans-serif;
     color: white;
     text-align: center;
@@ -259,24 +239,25 @@ h1 {
     height: 2em;
 
     max-width: 40em;
-    padding-left: 1.2em;
-    padding-right: 1.2em;
     padding-top: 0.5em;
-    padding-bottom: 0.3em;
+    padding-bottom: 0.5em;
     background-color: #00d66c;
-    margin-bottom: 0;
-    margin-top: 2em;
+    margin: 0;
+    margin-top: 2.3em;
     border-radius: 1.25em 1.25em 0em 0em;
 }
 
 label {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     font-family: sans-serif;
     font-weight: bold;
-    font-size: 80%;
+    font-size: 90%;
     color: #00d66c;
-    margin-left: 2em;
-    margin-top: 1em;
-    padding: 0.5em;
+    text-align: center;
+    margin-top: 0.5em;
 }
 
 label:after {
@@ -290,8 +271,8 @@ input {
     width: 70%;
     height: 30%;
     border-radius: 1.25em;
-    margin-left: 17%;
-    margin-right: 17%;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 1em;
     font-size: 80%;
     text-align: center;
@@ -306,21 +287,12 @@ a {
 /* ---------- responsive --------- */
 
 @media(min-width: 550px) {
-    div#vlucht {
-        margin-top: 7em;
-        width: 18em;
-        height: auto;
-    }
+
     form::after {
         height: 2.2em;
     }
-    h1 {
-        width: 12.7em;
-        height: 2.4em;
-    }
-    form {
-        height: 9.5em;
-        width: 19em;
+    header > section {
+        margin-top: 4em;
     }
 }
 
@@ -330,7 +302,7 @@ a {
         width: 20em;
     }
     h1 {
-        width: 12.7em;
+        width: 13.35em;
     }
 }
 
@@ -342,32 +314,31 @@ a {
 
 @media(min-width: 850px) {
     div#vlucht {
-        margin-top: 10em;
+        margin-top: 12.1em;
         width: 20em;
-        margin-left: 6%;
+
     }
     h1 {
         width: 15.02em;
     }
     label {
         font-size: 110%;
+        margin-top: -0.5em;
+        margin-bottom: 1em;
     }
     input {
         width: 17em;
         height: 3.3em;
-        margin-top: 1em;
+        margin-top: 1.8em;
     }
     input::placeholder {
         font-size: 1.3em;
     }
     form input#verstuur {
-        margin-top: 1em;
-        margin-left: 8em;
-        margin-right: 8em;
-
-        width: 7em;
-        height: 2.5em;
-        font-size: 105%;
+        margin-top: 1.4em;
+        width: 6em;
+        height: 2.2em;
+        font-size: 110%;
     }
     form {
         height: 12em;
@@ -394,13 +365,14 @@ h2 {
     font-size: 150%;
     color: #ff3268;
     text-align: center;
-    margin-bottom: 0.5em;
-    margin-top: 2em;
+    margin-bottom: 0.8em;
+    margin-top: 0.8em;
 }
 
 div.gallerij {
     display: flex;
     overflow-y: scroll;
+    margin-left: 0.5em;
 }
 
 h3 {
@@ -425,6 +397,7 @@ section.bekeken article {
     background-color: #ff3268;
     border-radius: 0.5em;
     margin: 0.3em;
+    margin-bottom: 1em;
 }
 
 article img:hover {
@@ -471,11 +444,11 @@ article img:hover {
 
 @media(min-width: 850px) {
     h2 {
-        margin-top: 4.1em;
-        font-size: 160%;
+        margin-top: 1em;
+        font-size: 180%;
     }
     h3 {
-        font-size: 125%;
+        font-size: 100%;
     }
     article img {
         width: 15em;
@@ -484,11 +457,11 @@ article img:hover {
 
 @media(min-width: 1050px) {
     h2 {
-        margin-top: 6.2em;
+        margin-top: 1em;
         font-size: 220%;
     }
     h3 {
-        font-size: 135%;
+        font-size: 100%;
     }
     article img {
         width: 19em;
@@ -513,7 +486,7 @@ section.categorie button.knop {
     font-size: 2em;
     color: #1b1497;
     border: none;
-    margin-bottom: 1.8em;
+    margin-bottom: 1.5em;
 }
 
 h4 {
@@ -545,7 +518,7 @@ section.categorie button {
     h4 {
         font-family: sans-serif;
         color: #1b1497;
-        font-size: 2em;
+        font-size: 180%;
         text-align: center;
         background-color: #F3E5D8;
         display: block;
@@ -609,13 +582,21 @@ section.categorie button {
 
 /* -------------------- ingelogd pagina -------------------- */
 
+header > section {
+    width: 100%;
+    height: 19em;
+    background: url("img/boek.jpg");
+    background-size: cover;
+    position: relative
+}
+
 body#results h1 {
-    padding: 0;
+    padding: 0.5em;
     border-radius: 0;
     background-color: transparent;
     color: #00d66c;
-    margin-top: 1em;
-    margin-bottom: -0.5em;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 div.resultaten ul {
@@ -638,8 +619,9 @@ body#results nav ul li img {
 
 body#results section.keuzes {
     background: rgba(255, 255, 255, 0.6);
-    margin-top: 2.2em;
-    height: 14em;
+    margin-top: 3em;
+    height: 13.5em;
+    margin-bottom: 0;
     width: 100%;
 }
 
@@ -650,8 +632,18 @@ body#results div.resultaten {
 }
 
 div.resultaten ul {
+    margin-top: 0.4em;
     list-style: none;
     padding-left: 0.9em;
+}
+
+body#results section.bekeken {
+    margin-top: 0em;
+}
+
+body#results h2 {
+    margin-top: 0.8em;
+    margin-bottom: 0.8em;
 }
 
 div a#aangeklikt {
@@ -693,17 +685,28 @@ div a#aanklikken {
     margin-right: 1.2em;
 }
 
+body#results button.knop {
+    margin-bottom: 1.1em;
+    margin-top: 0.5em;
+}
+
 /* ---------- responsive --------- */
 
 @media(min-width: 550px) {
     body#results h1 {
-        margin-left: 27%;
-        margin-right: 27%;
+        margin-left: auto;
+        margin-right: auto;
         margin-bottom: -0.8em;
+        width: 15em;
     }
     body#results section.keuzes {
         height: 15em;
-        margin-top: 8em;
+        margin-top: 0;
+    }
+    body#results h1 {
+        margin-top: 1em;
+        padding-top: 1em;
+        margin-bottom: 0.75em;
     }
 }
 
@@ -711,18 +714,23 @@ div a#aanklikken {
     body#results div.resultaten li img {
         width: 11.5em;
         height: 11.5em;
+
         margin-left: 0.6em;
         margin-right: 0.6em;
     }
     body#results h1 {
-        margin-left: 27%;
-        margin-right: 27%;
-        margin-bottom: -0.5em;
-        font-size: 1.6em;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 1.8em;
+        padding-top: 0.8em;
+        margin-top: 3em;
+        margin-bottom: 0.5em;
     }
     body#results section.keuzes {
         height: 18em;
-        margin-top: 8em;
+    }
+    header > section {
+        height: 30em;
     }
 }
 
@@ -730,18 +738,23 @@ div a#aanklikken {
     body#results div.resultaten li img {
         width: 14em;
         height: 14em;
+        margin-top: 1em;
         margin-left: 0.6em;
         margin-right: 0.6em;
     }
     body#results h1 {
-        margin-left: 28%;
-        margin-right: 28%;
-        margin-bottom: -0.5em;
-        font-size: 1.7em;
+        padding-top: 0.8em;
+        font-size: 1.8em;
+        margin-bottom: 0;
+
     }
     body#results section.keuzes {
         height: 21em;
         margin-top: 9em;
+    }
+    header > section {
+        width: 100%;
+        height: 38em;
     }
 }
 
@@ -751,16 +764,19 @@ div a#aanklikken {
         height: 16em;
         margin-left: 0.7em;
         margin-right: 0.7em;
+        margin-top: 2em;
     }
     body#results h1 {
-        margin-left: 33%;
-        margin-right: 33%;
-        margin-bottom: -1em;
+
         font-size: 2.1em;
     }
     body#results section.keuzes {
         height: 25em;
         margin-top: 13em;
+    }
+    header > section {
+        width: 100%;
+        height: 45em;
     }
 }
 
@@ -1043,30 +1059,29 @@ body#samenstellen h1 {
     color: #2800A0;
     margin-top: 0.5em;
     font-size: 150%;
+    z-index: 1;
 }
 
-body#samenstellen ul {
-    list-style: none;
-}
-
-body#samenstellen ul.album li img {
-    width: 11em;
-    height: 11em;
-    margin-left: 0.5em;
-    margin-right: 0.5em;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-}
-
-body#samenstellen ul.album li p {
-    position: absolute;
-    z-index: 3;
-    font-size: 5.5em;
-    font-family: sans-serif;
-    font-weight: bold;
-    margin-top: 0.2em;
-    margin-left: 0.35em;
+body#samenstellen section p {
+    font-family: verdana;
+    background-color: #2800A0;
+    font-size: 1.4em;
     color: white;
+    border-radius: 50%;
+    width: 1.3em;
+    padding-left: 0.3em;
+    z-index: 3;
+    position: absolute;
+    margin-left: 2.8em;
+    margin-top: 1.4em;
+    font-weight: 600
+}
+
+body#samenstellen ul.album {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 0.5em;
 }
 
 body#samenstellen li {
@@ -1074,34 +1089,94 @@ body#samenstellen li {
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: flex-start;
-    max-width: 100%;
-    float: left;
+    width: 11em;
+    position: relative;
+    margin-bottom: 1em;
+    margin: 0.5em;
 }
 
-body#samenstellen ul.album {
-    margin-left: -1.5em;
-    margin-top: 1em;
-    margin-bottom: 53em;
+body#samenstellen .album li:after {
+    content: " ";
+    height: 100%;
+    width: 100%;
+    background: #00d66c;
+    z-index: 1;
+    position: absolute;
+    left: .5em;
+    top: .5em;
+    border: 1px solid grey;
+}
+
+/*
+body#samenstellen .album li:nth-of-type(3n+0) {
+    background: #2800A0;
+}
+*/
+
+body#samenstellen ul.album li button {
+    background: lime;
+    font-size: 2em;
+    width: 5.5em;
+    height: 5.5em;
+    font-weight: 600;
+    text-align: left;
+    color: #fff;
+    background-color: #00d66c;
+    position: relative;
+    z-index: 10;
+    border: solid 1px grey;
+
+}
+
+/*
+body#samenstellen ul.album li button:after {
+    content: "1";
+    text-align: left;
+    font-weight: bold;
+    font-size: 3em;
+    position: absolute;
+    z-index: 3;
+    margin-top: -1.3em;
+    margin-left: -0.7em;
+    font-family: sans-serif;
+    visibility: hidden;
+}
+*/
+
+body#samenstellen ul.album li button:after {
+    content: "1";
+    text-align: left;
+    font-weight: bold;
+    font-size: 3em;
+    position: absolute;
+    z-index: 3;
+    margin-top: -1.3em;
+    margin-left: -0.7em;
+    font-family: sans-serif;
+    opacity: 0;
+    transition: 4s;
+
+}
+
+body#samenstellen ul.album li button.addone:after {
+    opacity: 1
+}
+
+
+body#samenstellen ul.album li:nth-child(odd) button {
+    /background-color: red;
+}
+
+
+body#samenstellen ul.album li em {
+    font-style: normal;
+    font-size: 2.5em;
+    font-weight: bold;
+    display: block
 }
 
 body#samenstellen ul li img {
     opacity: 1;
-}
-
-body#samenstellen span {
-    font-size: 0;
-    opacity: 1;
-    transition: 0.5s;
-}
-
-body#samenstellen input {
-    width: 13.2em;
-    height: 13.2em;
-    margin-left: 0.5em;
-    margin-right: 0.5em;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-    border-radius: 0;
 }
 
 /* ---------- responsive --------- */
@@ -1166,7 +1241,7 @@ body#gelukt h1 {
     margin-bottom: 1em;
     margin-top: 0.5em;
     padding: 0;
-    font-size: 150%;
+    font-size: 170%;
     border-radius: 0;
     padding-top: 0.5em;
 }
@@ -1190,8 +1265,8 @@ div#inner {
     font-weight: bold;
 }
 
-body#gelukt section.keuzes ul li img {
-    margin-top: 2.3em;
+body#gelukt section.vullen img {
+    width: 18em;
 }
 
 body#gelukt nav ul li img {
@@ -1200,9 +1275,11 @@ body#gelukt nav ul li img {
 
 section.keuzes a {
     font-size: 10em;
-    margin-top: -2em;
+    line-height: 0.7em;
     font-family: verdana, sans-serif;
     color: #91A3B7;
+    margin-left: 0;
+    /*    border: solid 1px black*/
 }
 
 section.keuzes a:hover {
@@ -1210,33 +1287,40 @@ section.keuzes a:hover {
     transition: 0.3s;
 }
 
+body#gelukt section.keuzes ul {
+    text-decoration: none;
+    margin-top: 1.5em;
+}
+
+section.keuzes {
+    margin-bottom: 5em;
+}
+
 body#gelukt h2 {
-    margin-top: 0.5em;
     font-size: 2em;
     margin-left: auto;
     margin-right: auto;
     width: 100%;
+    font-size: 170%;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
 }
 
 body#gelukt h3 {
-    margin-top: 0.5em;
+    margin-top: 1em;
     font-size: 2em;
-    margin-left: -1em;
-    padding-left: -1em;
-    margin-right: auto;
-    width: 100%;
+    margin-left: 0em;
+    padding-left: 0;
+    font-size: 170%;
     color: #ff3268;
+    margin-bottom: 0.5em;
 }
 
 /* ---------- responsive --------- */
 
 @media(min-width: 550px) {
-    body#gelukt h3 {
-        font-size: 2.1em;
-        margin-left: 0.1em;
-    }
     body#gelukt h1 {
-        font-size: 155%;
+        font-size: 170%;
     }
 }
 
@@ -1260,31 +1344,8 @@ body#gelukt h3 {
         line-height: 2.6em;
     }
     body#gelukt h1 {
-        font-size: 160%;
+        font-size: 180%;
         margin-top: 1em;
-    }
-    body#gelukt section.keuzes ul li img {
-        margin-top: 1em;
-        margin: 0.5em;
-        width: 12em;
-        height: 12em;
-    }
-    body#gelukt section.keuzes ul li img {
-        margin-top: 1.2em;
-        margin: 0.7em;
-        width: 14em;
-        height: 14em;
-    }
-    section.keuzes a {
-        margin: 0.1em;
-        font-size: 12em;
-    }
-    body#gelukt h3 {
-        font-size: 2.2em;
-        margin-left: -1.05em;
-    }
-    section#losse a {
-        margin-left: -0.2em;
     }
 }
 
@@ -1301,17 +1362,6 @@ body#gelukt h3 {
         font-size: 190%;
         margin-top: 1.5em;
     }
-    section.keuzes a {
-        margin: 0.2em;
-        font-size: 14em;
-    }
-    body#gelukt h3 {
-        font-size: 2.2em;
-        margin-left: -1.9em;
-    }
-    section#losse a {
-        margin-left: -0.4em;
-    }
 }
 
 @media(min-width: 1050px) {
@@ -1327,20 +1377,6 @@ body#gelukt h3 {
     body#gelukt h1 {
         font-size: 220%;
         margin-top: 2em
-    }
-    body#gelukt section.keuzes ul li img {
-        margin-top: 1.3em;
-        margin: 1em;
-        width: 15.5em;
-        height: 15.5em;
-    }
-    section.keuzes a {
-        margin: 0.3em;
-        font-size: 15em
-    }
-    body#gelukt h3 {
-        font-size: 2.3em;
-        margin-left: -2.5em;
     }
 }
 

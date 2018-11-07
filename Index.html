@@ -7,48 +7,36 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<body id="results">
+<body>
     <header>
-        <a href="index2.0.html"><img id="logo" src="img/logo.jpg" alt="logo transavia"></a>
-
-
+        <a href="Index.html"><img id="logo" src="img/logo.jpg" alt="logo transavia"></a>
         <nav>
             <ul>
                 <li> <a href="#">Verhalen</a> </li>
                 <li> <a href="#">Contact</a> </li>
-                <li> <a href="Downloaden.html"><img src="img/ticketaan.png" alt=".."></a></li>
+                <li> <a href="Downloaden.html"><img src="img/ticket.png" alt=".."></a></li>
             </ul>
         </nav>
         <section>
-            <section class="keuzes">
-                <h1> Bundels speciaal voor jou!</h1>
-                <div class="resultaten">
-                    <ul>
-                        <li><img src="img/emotie.png" alt="verhaal verliefd"></li>
-                        <li><img src="img/spanning.png" alt="verhaal verliefd"></li>
-                        <li><img src="img/kleuren.png" alt="verhaal verliefd"></li>
-                        <li><img src="img/emotie.png" alt="verhaal verliefd"></li>
-                        <li><img src="img/spanning.png" alt="verhaal verliefd"></li>
-                        <li><img src="img/kleuren.png" alt="verhaal verliefd"></li>
-                        <li><img src="img/emotie.png" alt="verhaal verliefd"></li>
-                    </ul>
-                </div>
-            </section>
+            <div id="vlucht">
+                <h1> Bundels voor op reis </h1>
+
+                <form action="index2.0.html">
+                    <fieldset>
+                        <label for="vl.nr"> Vul hier uw vluchtnummer in:  
+                </label>
+                        <input type="text" id="vl.nr" placeholder="bijv. AF 1234" name="vluchtnummer" pattern="[az-0-9]" required>
+                        <input id="verstuur" type="submit" name="subscribe" value="inloggen" />
+                    </fieldset>
+                </form>
+            </div>
         </section>
     </header>
 
-    <section class="bekeken">
+    <section class="bekeken ">
         <h2> Meest bekeken verhalen</h2>
 
-        <div class="gallerij">
-            <article>
-                <a href="verhaal.html">
-                    <h3> Alzheimer </h3><img src="img/alzhei.png" alt="verhaal Alzheimer"></a>
-            </article>
-            <article>
-                <h3> Veriefd </h3><img src="img/liefde.png" alt="verhaal Verliefd "></article>
-            <article>
-                <h3> Verliefd </h3><img src="img//stone.png" alt="verhaal Stoned "></article>
+        <div class="gallerij ">
             <article>
                 <h3> Alzheimer </h3><img src="img/alzhei.png" alt="verhaal Alzheimer"></article>
             <article>
@@ -66,12 +54,12 @@
     </section>
 
     <section class="categorie ">
+
         <button class="knop"> Zoek op categorie </button>
 
-        <h4>Zoek op categorie </h4>
-        <div><a href="index3.0.html" id="aangeklikt">Actie</a>
-
-            <button>Romantisch</button>
+        <h4>Zoek op categorie</h4>
+        <div><button id="action" onclick="filteren()">Actie</button>
+            <button id="romantic" onclick="myFunction()">Romantisch</button>
             <button>Fictie</button></div>
         <ul>
             <li><img src="img/bundel1/emotie.png " alt="emotie"></li>
@@ -84,8 +72,8 @@
             <li><img src="img/bundel1/komedy.png" alt="komedy"></li>
         </ul>
 
-    </section>
 
+    </section>
 </body>
 
 </html>
